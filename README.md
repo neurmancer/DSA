@@ -42,4 +42,5 @@ A repo dedicated to Data Structures And Algorithms (to yk...properly learning pr
 
 ### Linked Lists 
 
-- First linked lists entry 
+- -First linked lists entry (introduction)
+- - Added linked list iteration and assigning value to nodes(still introduction but I am less scared of it)
