@@ -52,7 +52,7 @@ int main()
     {
         printf("%p\t%d\n",(void *) iter->next,iter->x); //Still...using casts because %p takes (void *) and iter->next is (node *)
         iter = iter->next;
-    } //Just ran the code and they were 20 bytes apart for all runs...4 bytes padding maybe?
+    } //Just ran the code and they were 32 bytes apart for all runs...4 bytes padding maybe?
     //0x55ab996d3440  They seem sequential but I don't think so since malloc just doesn't care about sequences 
     //0x55ab996d3460
     iter = root;
