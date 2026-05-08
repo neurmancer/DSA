@@ -73,8 +73,9 @@ void printTheList(node *r)
 
     while (r->next != NULL) {
         printf("%d\n",r->x); 
-        r = r->next;
+        r = r->next; //since this line for the final iter where r->next = NULL won't gonna work I added the line for manual printing the last line 
     }
+    printf("%d\n",r->x);
 }
 
 int addData(node *r,int x)
