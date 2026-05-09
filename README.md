@@ -2,7 +2,7 @@
 A repo dedicated to Data Structures And Algorithms (to yk...properly learning programming instead of throwing shit into files or using primes for off-sets)
 
 
-**Btw For This REPO Knowing Dynamic Allocation is Strongly Advised**
+**Btw For This REPO Knowing Dynamic Allocation is Strongly Advised(You can check Basic-C-Example Repo forIT**
 
 ## Syllabus (or how tf u spell it..)
 - - Firstly This is just a preprocessing thought and I haven't finished any of those but it'll go like this

@@ -11,7 +11,6 @@
 */
 
 
-#include <inttypes.h>
 #include <stdio.h> // for I/O
 #include <stdlib.h> //For malloc and free()
 
