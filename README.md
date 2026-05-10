@@ -45,3 +45,4 @@ A repo dedicated to Data Structures And Algorithms (to yk...properly learning pr
 - -First linked lists entry (introduction)
 - - Added linked list iteration and assigning value to nodes(still introduction but I am less scared of it)
 - - Added linked list data assignment in the given node(Well at first that was the idea but it ended up being kinda sorted adding...so now it besically adds new data sequentially)
+- - Added linked lists4.c and it's a new function for deleting nodes from the list (I feel like I am getting closer to abstraction) 

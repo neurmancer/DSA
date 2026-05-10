@@ -107,7 +107,7 @@ int addData(node *r,int val)
     return(0);
 }
 
-node *addDataSequentialaly(node *r,int val)
+node *addDataSequentilaly(node *r,int val)
 {
     if (r == NULL) { 
         //This block is basically an edge-case...if the function gets called for the first element in the linked list
