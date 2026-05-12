@@ -108,7 +108,7 @@ node *delete(node *r,int target)
         return(r);
     }
     temp = iter->next;
-    iter->next =iter->next->next; //or temp->next
+    iter->next =iter->next->next; 
     free(temp);
     return(r); 
 }
