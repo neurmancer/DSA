@@ -95,6 +95,7 @@ node *delete(node *r,int target)
     if (r->x == target) { //Edge case of target being the first node in the linked list so we hold the address in temp and assign root to the second element before freeign the temp(old root)
         temp = r;
         r = r->next;
+        free(temp); //This bitch was missing
         return(r);
     }
 
@@ -119,6 +120,8 @@ int main(void)
 {
     
     node *root = (node *) malloc(SIZE);
+    root-> x = 13;
+    root->next = NULL;
     if (root == NULL) {return(-1);}
 
     for (int i = 0;i < 10;i++) {
@@ -127,7 +130,7 @@ int main(void)
 
     printTheList(root);
     for (int i = 5;i < 9;i++) {
-        delete(root,i);
+        root = delete(root,i);
     }
     
     printTheList(root);
@@ -179,6 +182,26 @@ int main(void)
     }
     printTheList(root);
     free(root); //Yup with that I presume I cleared all the fucked up memory from the lecture 1 
+
+    /*
+        Yeah I've done it here is the proof
+
+        just ran valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./a
+
+        but I had forgotten to free the temp in delete function and that was leaking for a while now with valgrind I fixed it too
+    ==10964==
+    ==10964== HEAP SUMMARY:
+    ==10964==     in use at exit: 0 bytes in 0 blocks
+    ==10964==   total heap usage: 20 allocs, 20 frees, 1,328 bytes allocated
+    ==10964==
+    ==10964== All heap blocks were freed -- no leaks are possible
+    ==10964==
+    ==10964== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+    [neuromancer@ARA-ARA LinkedLists]$
+
+
+    
+    */
 
     return(0);
 }
