@@ -149,6 +149,11 @@ node *delete(node *r,int target)
     if (r == NULL){return(NULL);}
 
     if (r->x == target) {
+        if (r->next == r) {
+            free(r);
+            return(NULL);
+        }
+        
         node *temp = r->next;
         node *iter = r;
         while (iter->next != r) {
