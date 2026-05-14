@@ -49,3 +49,4 @@ A repo dedicated to Data Structures And Algorithms (to yk...properly learning pr
 
 - - Next lecture about Cycling linked lists template is here with broken code inside which I left as it is so I can come back with fresh mind to cuss a little more
 - - Good news...I did come back for it and made it worse lol...now it just segfaults 
+- - - Better news...I fixed the shit but for now without description this is just a code not a lecture but it'll be
