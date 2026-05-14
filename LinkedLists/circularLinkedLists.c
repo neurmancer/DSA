@@ -67,11 +67,10 @@ int main()
     printTheList(root);
     
 
-    while (root->next != root) {
-        delete(root,root->next->x);
+    while (root != NULL) {
+        root = delete(root,root->x);
     }
 
-    free(root);
 
     return(0);
 }
@@ -151,6 +150,7 @@ node *delete(node *r,int target)
     if (r->x == target) {
         if (r->next == r) {
             free(r);
+            printf("There is no linked list nor any nodes anymore\n");
             return(NULL);
         }
         
