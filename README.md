@@ -47,4 +47,5 @@ A repo dedicated to Data Structures And Algorithms (to yk...properly learning pr
 - - Added linked list data assignment in the given node(Well at first that was the idea but it ended up being kinda sorted adding...so now it besically adds new data sequentially)
 - - Added linked lists4.c and it's a new function for deleting nodes from the list (I feel like I am getting closer to abstraction) 
 
-- - Next lecture about Cycling linked lists template is here with broken code inside which I left as it is so I can come back with fresh mind to cuss a little more 
+- - Next lecture about Cycling linked lists template is here with broken code inside which I left as it is so I can come back with fresh mind to cuss a little more
+- - Good news...I did come back for it and made it worse lol...now it just segfaults 
