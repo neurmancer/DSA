@@ -98,27 +98,28 @@ int printTheList(node *r)
 node *sortedAdd(node *r,int val)
 {
     if (r == NULL ) { 
-        
-        r = (node *) (malloc(NODE_SIZE));
-        if (r == NULL) {printf("Malloc failed\n"); return(NULL);} 
-        r->x = val;
+        //Checking if there is no node in the list...lol hence no list at all 
+        r = (node *) (malloc(NODE_SIZE)); //Create the empty node
+        if (r == NULL) {printf("Malloc failed\n"); return(NULL);} //Error handling 
+        r->x = val; //Assign the value param to the x
 
-        r->next = r;
+        r->next = r; //Create the reptilian thingy eating it's own tail..basically whole linked list will be an O shape
 
 
-        return(r);
+        return(r); 
     }
 
     if (r->x > val) { 
         
-        node *temp = (node *)malloc(NODE_SIZE);
+        //If r->x is bigger than val itself
+        node *temp = (node *)malloc(NODE_SIZE); 
         node *iter = r;
         if (temp == NULL) {return(NULL);}
         while (iter->next != r) {
             iter = iter->next;
-        }
+        }//stride to the end of the linked list
         temp->x = val;
-        iter->next = temp;
+        iter->next = temp; //put this to end (which is before root since it's a closed loop)
         temp->next = r;
 
 
@@ -128,13 +129,13 @@ node *sortedAdd(node *r,int val)
         return(temp);
     }
 
-    node *iter = r;
+    node *iter = r; //For ever other possibilty go till back at start or iter hits the target val
     while (iter->next != r && iter->next->x < val) { 
         iter = iter->next;
     }
 
-    node *temp = (node *)malloc(NODE_SIZE);
-    if (temp == NULL) {return(NULL);}
+    node *temp = (node *)malloc(NODE_SIZE); //Create the new node
+    if (temp == NULL) {return(NULL);} //    UwU
     temp->x = val;
     temp->next = iter->next;
     iter->next = temp;
@@ -147,20 +148,21 @@ node *delete(node *r,int target)
 {
     if (r == NULL){return(NULL);}
 
-    if (r->x == target) {
+    if (r->x == target) //Check if the first node is the one
+     {
         if (r->next == r) {
             free(r);
             printf("There is no linked list nor any nodes anymore\n");
-            return(NULL);
+            return(NULL);//If the only node is the root in list delete it and return NULL to prevent dangly bois
         }
-        
-        node *temp = r->next;
-        node *iter = r;
+        //Else
+        node *temp = r->next; //Take the second node
+        node *iter = r; //Iter to the end 
         while (iter->next != r) {
             iter = iter->next;
         }
-        iter->next = temp;
-        free(r);
+        iter->next = temp; //Put the temp where iter->next supposed to hold root
+        free(r); //Free your shit
         
         return(temp);
     }
@@ -170,12 +172,10 @@ node *delete(node *r,int target)
         iter = iter->next;
     }
 
-    if (iter->next->x == target) {//Bug's here...
+    if (iter->next->x == target) {
         node *temp = iter->next;
         iter->next = temp->next;
         free(temp);
-
-
 
         return(r);
     }
